@@ -2,6 +2,7 @@ package lab5.tests;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import lab5.Book;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -46,12 +47,12 @@ private Library library;
 	void FindBook() {
 		library.addBook(book1);
 		library.addBook(book2);
-		PaperBook book = (PaperBook) library.findBookByTitle(book1.getTitle());
+		Book book = library.findBookByTitle(book1.getTitle());
 		assert(book == book1);
 		assert(library.booksCount() == 2);
 		library.removeBook(book2);
 		assert(library.booksCount() == 1);
-		book = (PaperBook) library.findBookByTitle(book2.getTitle());
+		book = library.findBookByTitle(book2.getTitle());
 		assert(book == null);
 		library.removeBook(book2);
 		assert(library.booksCount() == 1);
