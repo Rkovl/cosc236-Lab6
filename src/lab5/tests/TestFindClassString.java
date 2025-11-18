@@ -46,12 +46,12 @@ private Library library;
 	void FindBook() {
 		library.addBook(book1);
 		library.addBook(book2);
-		PaperBook book = library.findBookByTitle(book1.getTitle());
+		PaperBook book = (PaperBook) library.findBookByTitle(book1.getTitle());
 		assert(book == book1);
 		assert(library.booksCount() == 2);
 		library.removeBook(book2);
 		assert(library.booksCount() == 1);
-		book = library.findBookByTitle(book2.getTitle());
+		book = (PaperBook) library.findBookByTitle(book2.getTitle());
 		assert(book == null);
 		library.removeBook(book2);
 		assert(library.booksCount() == 1);
