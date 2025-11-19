@@ -9,9 +9,25 @@ public class LibraryApp {
 	// Some functions for the Assignment
 	private static void addMember(String name) {
 		librarian.addMember(name);
-	}	
+	}
 	private static void addBook(String title) {
-		librarian.addBook(title);
+		addBook(title, 0);
+	}
+	private static void addBook(String title, int type) {
+		switch (type) {
+			case 0:
+				librarian.addPaperBook(title);
+				break;
+			case 1:
+				librarian.addEBook(title);
+				break;
+			case 2:
+				librarian.addAudioBook(title);
+				break;
+			default:
+				librarian.addPaperBook(title);
+		}
+
 	}
 	private static void borrowBook(String title, String name) {
 		librarian.borrowBookByMember(title, name);
@@ -34,9 +50,9 @@ public class LibraryApp {
 		 
 	    // Adding some books to the catalog
 		System.out.println("\n *** Adding books to the library:");
-		librarian.addBook("Dune");
-		librarian.addBook("1984");
-		librarian.addBook("Moby Dick");
+		librarian.addPaperBook("Dune");
+		librarian.addPaperBook("1984");
+		librarian.addPaperBook("Moby Dick");
 		
 		// Adding members to the library
 		System.out.println("\n *** Adding members to the library:");
