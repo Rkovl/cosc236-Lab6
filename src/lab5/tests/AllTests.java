@@ -10,7 +10,9 @@ package lab5.tests;
 				TestRemoveMemberWithBooks.class,
 				TestController.class,
                 TestBorrowingService.class
+				TestBookFactories.class
 })
+				
 public class AllTests {
     // No need for test methods here; the suite will run the included classes
 }
