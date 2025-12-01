@@ -15,6 +15,7 @@ import lab5.Book;
 class TestAddRemoveBooks {
 	
 	private Library library;
+	private BorrowingService service = BorrowingService.getInstance();
 	
 	@BeforeEach
 	void setUp() throws Exception {
@@ -25,7 +26,7 @@ class TestAddRemoveBooks {
 	PaperBook book2 = new PaperBook("1984");
 	PaperBook book3 = new PaperBook("Moby Dick");
 	
-	Member member = new Member("Grady Booch");
+	Member member = new Member("Grady Booch", service);
 	
 	@Test
 	void AddBooks() {
