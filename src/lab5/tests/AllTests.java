@@ -11,7 +11,7 @@ import org.junit.platform.suite.api.Suite;
 				TestNotAvailablePaperBook.class,
 				TestRemoveMemberWithBooks.class,
 				TestController.class,
-                TestBorrowingService.class
+                TestBorrowingService.class,
 				TestBookFactories.class
 })
 				
